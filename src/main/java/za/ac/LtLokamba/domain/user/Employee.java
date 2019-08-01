@@ -39,6 +39,12 @@ public class Employee
             return this;
         }
 
+        public Builder copy(Employee employee)
+        {
+            this.firstName = employee.firstName;
+            this.lastName = employee.lastName;
+            return this;
+        }
 
        public Employee build()
        {
