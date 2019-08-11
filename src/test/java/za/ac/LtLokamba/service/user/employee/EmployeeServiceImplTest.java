@@ -1,6 +1,7 @@
 package za.ac.LtLokamba.service.user.employee;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import za.ac.LtLokamba.domain.user.Employee;
@@ -31,18 +32,24 @@ public class EmployeeServiceImplTest
     @Test
     public void create()
     {
-
+        assertEquals(service.create(employee),service.create(employee));
     }
 
     @Test
-    public void read() {
+    public void read()
+    {
+        assertNull(service.read(""));
     }
 
     @Test
-    public void update() {
+    public void update()
+    {
+        assertNull(service.update(employee));
     }
 
     @Test
-    public void delete() {
+    public void delete()
+    {
+        service.delete("");
     }
 }
