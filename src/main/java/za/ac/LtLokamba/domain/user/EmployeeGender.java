@@ -22,8 +22,10 @@ public class EmployeeGender
         return genderId;
     }
 
-    public static class Builder{
+    public static class Builder
+    {
         private String employeeId,genderId;
+
         public Builder employeeId(String id)
         {
             this.employeeId = id;
