@@ -2,76 +2,43 @@ package za.ac.LtLokamba.domain.demography;
 
 public class Race
 {
-    private String black,white,indians,chinese;
-
+    private String raceId,race;
 
     private Race(){}
 
     public Race(Builder builder)
     {
-        this.black = builder.black;
-        this.white = builder.white;
-        this.chinese = builder.chinese;
-        this.indians = builder.indians;
+        this.race = builder.race;
     }
 
-    public String getBlack()
+    public String getRaceId()
     {
-        return black;
+        return raceId;
     }
 
-    public String getWhite()
+    public String getRace()
     {
-        return white;
-    }
-
-    public String getIndians()
-    {
-        return indians;
-    }
-
-    public String getChinese()
-    {
-        return chinese;
+        return race;
     }
 
     public static class Builder
     {
-        private String black,white,indians,chinese;
+        private String raceId,race;
 
-        public Builder black(String black)
+        public Builder raceId(String race)
         {
-            this.black = black;
+            this.raceId = race;
             return this;
         }
-
-        public Builder white(String white)
+        public Builder race(String race)
         {
-            this.white = white;
+            this.race = race;
             return this;
         }
-
-        public Builder indians(String indians)
-        {
-            this.indians = indians;
-            return this;
-        }
-
-        public Builder chinese(String chinese)
-        {
-            this.chinese = chinese;
-            return this;
-        }
-
         public Race build()
         {
             return new Race(this);
         }
-
     }
 
-    @Override
-    public String toString() {
-        return "Race{" + "black='" + black + '\'' + ", white='" + white + '\'' + ", indians='" + indians + '\'' + ", chinese='" + chinese + '\'' + '}';
-    }
 }
