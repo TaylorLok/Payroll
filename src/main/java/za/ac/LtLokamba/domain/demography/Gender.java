@@ -1,41 +1,39 @@
 package za.ac.LtLokamba.domain.demography;
 
+import java.util.Objects;
+
 public class Gender
 {
-    private String male,female;
+    private String genderId,typeGender;
 
     private Gender(){}
 
-
     public Gender(Builder builder)
     {
-        this.male = builder.male;
-        this.female = builder.female;
+        this.typeGender = builder.typeGender;
     }
 
-    public String getMale()
+    public String getGenderId()
     {
-        return male;
+        return genderId;
     }
 
-    public String getFemale()
+    public String getTypeGender()
     {
-        return female;
+        return typeGender;
     }
 
     public static class Builder
     {
-        private String male,female;
-
-        public Builder male(String male)
+        private String genderId,typeGender;
+        public Builder genderId(String id)
         {
-            this.male = male;
+            this.genderId = id;
             return this;
         }
-
-        public Builder female(String female)
+        public Builder typeGnder(String typeGender)
         {
-            this.female = female;
+            this.typeGender = typeGender;
             return this;
         }
 
@@ -46,7 +44,23 @@ public class Gender
     }
 
     @Override
-    public String toString() {
-        return "Gender{" + "male='" + male + '\'' + ", female='" + female + '\'' + '}';
+    public String toString()
+    {
+        return "Gender{" + "genderId='" + genderId + '\'' + ", typeGender='" + typeGender + '\'' + '}';
+    }
+
+    @Override
+    public boolean equals(Object o)
+    {
+        if (this == o) return true;
+        if (!(o instanceof Gender)) return false;
+        Gender gender = (Gender) o;
+        return genderId.equals(gender.genderId) && typeGender.equals(gender.typeGender);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Objects.hash(genderId, typeGender);
     }
 }
