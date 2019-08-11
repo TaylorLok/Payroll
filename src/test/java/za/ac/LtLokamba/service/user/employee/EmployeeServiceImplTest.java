@@ -44,7 +44,7 @@ public class EmployeeServiceImplTest
     @Test
     public void update()
     {
-        assertNull(service.update(employee));
+        Assert.assertEquals(service.update(employee),service.update(employee));
     }
 
     @Test
